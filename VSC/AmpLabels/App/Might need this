@@ -1,0 +1,81 @@
+import openpyxl
+import tkinter as tk
+from tkinter import ttk
+from tkinter import filedialog
+
+
+
+
+root = tk.Tk()
+
+# Function to handle checkbox changes
+def on_checkbox_click(checkbox):
+    checkbox_changed(checkbox)
+
+# Create a list to hold the checkboxes
+checkboxes = []
+
+# Function to create checkboxes
+def create_checkbox(label_text):
+    var = tk.IntVar()
+    checkbox = tk.Checkbutton(root, text=label_text, variable=var, command=lambda: on_checkbox_click(checkbox))
+    checkboxes.append(checkbox)
+    checkbox.pack(anchor=tk.W)
+
+# Create three checkboxes
+create_checkbox("Checkbox 1")
+create_checkbox("Checkbox 2")
+create_checkbox("Checkbox 3")
+
+root.mainloop()
+
+
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+a1 = tk.IntVar()
+a2 = tk.IntVar()
+a3 = tk.IntVar()
+
+
+
+
+
+
+a1 = tk.IntVar()
+a2 = tk.IntVar()
+a3 = tk.IntVar()
+
+
+checkbutton1 = ttk.Checkbutton(widgets_frame, text="Single cart", variable=a1)
+checkbutton1.grid(row=0, column=0)
+checkbutton1.bind("<Button-1>", on_checkbox_click)
+checkbutton2 = ttk.Checkbutton(widgets_frame, text="Double cart", variable=a2)
+checkbutton2.grid(row=0, column=2)
+checkbutton2.bind("<Button-1>", on_checkbox_click)
+checkbutton3 = ttk.Checkbutton(widgets_frame, text="Triple cart", variable=a3)
+checkbutton3.grid(row=0, column=4)
+checkbutton3.bind("<Button-1>", on_checkbox_click)
+
+checkbutton1 = tk.Checkbutton(widgets_frame, text="Option 1")
+checkbutton1.pack(row=0, column=0)
+checkbutton1.bind("<Button-1>", on_checkbox_click)
+
+checkbutton2 = tk.Checkbutton(widgets_frame, text="Option 2")
+checkbutton2.grid(row=0, column=2)
+checkbutton2.bind("<Button-1>", on_checkbox_click)
+
+checkbutton3 = tk.Checkbutton(widgets_frame, text="Option 3")
+checkbutton3.grid(row=0, column=4)
+checkbutton3.bind("<Button-1>", on_checkbox_click)
+
+def create_checkbox(label_text):
+    var = tk.IntVar()
+    checkbox = tk.Checkbutton(widgets_frame, text=label_text, variable=var, command=lambda: on_checkbox_click(checkbox))
+    checkboxes.append(checkbox)
+    checkbox.pack(anchor=tk.N)
+
+create_checkbox("Single cart")
+create_checkbox("Double cart")
+create_checkbox("Triple cart")
